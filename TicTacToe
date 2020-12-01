@@ -1,0 +1,89 @@
+1...Create TicTacToeGame class
+2...Create Method for Every Use cases and call from main
+3...Create a board char[]of size 10 and assign empty space to each element
+4.oth index ignore to make it user friendly
+
+
+
+package TicTocToe;
+
+import java.util.Scanner;
+
+public class TicTacToegame {
+	static String[] board;
+	static String playerOneSymbol;
+	static String computerSymbol;
+ public static void main(String[] args) {
+
+		board = createBoard();
+		TicTacToegame ticTacToeGame = new TicTacToegame();            /* Ability to allow a player to choose a letter X or O
+		playerOneSymbol = ticTacToeGame.inputChoiceOfPlayer();
+		if (playerOneSymbol.equalsIgnoreCase("x")) {
+			computerSymbol = "o";
+		} else {
+			computerSymbol = "x";
+		}
+		int userChoice = placeInput();
+		// showBoard();
+		makeMoves(userChoice);
+
+	}
+
+	String inputChoiceOfPlayer() {
+		System.out.println("Press 1. to choose x;");
+		System.out.println("Press 2. to choose o");
+		Scanner scanner = new Scanner(System.in);
+		int playerOneInput = scanner.nextInt();
+		if (playerOneInput == 1) {
+			return "x";
+		}
+		return "o";
+	}
+
+	private static String[] createBoard() {
+		String[] board = new String[10];
+		for (int i = 0; i < board.length; i++) {
+			board[i] = " ";
+		}
+		return board;
+	}
+                                                                     /*As a Player  would like to see a board so i  can choose valid cells to make my move during turn*/
+	static void Board() {
+		System.out.println("|---|---|---|");
+		System.out.println("| " + board[0] + " | " + board[1] + " | " + board[2] + " |");
+		System.out.println("|-----------|");
+		System.out.println("| " + board[3] + " | " + board[4] + " | " + board[5] + " |");
+		System.out.println("|-----------|");
+		System.out.println("| " + board[6] + " | " + board[7] + " | " + board[8] + " |");
+		System.out.println("|---|---|---|");
+	}
+                                                 /*ability to move desired location in the board/*
+	static int placeInput() {
+		System.out.println("player will play first. Look at the empty slots and choose your slot");
+		Board();
+		Scanner scanner = new Scanner(System.in);
+		int userInput = scanner.nextInt();
+		return userInput;
+	}
+  
+  
+  /*ability to check empty space before move*/
+
+	static void makeMoves(int userChoice) {
+		boolean flag = true;
+		while (flag) {
+			if (userChoice >= 0 && userChoice <= 9 && board[userChoice].equalsIgnoreCase(" ")) {
+				board[userChoice] = playerOneSymbol;
+				flag = false;
+				Board();
+			} else if (board[userChoice] != " ") {
+				System.out.println("slot not empty");
+			} else {
+				System.out.println("invalid input");
+			}
+		}
+	}
+}
+
+	
+
