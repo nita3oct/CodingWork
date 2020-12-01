@@ -1,0 +1,333 @@
+package LogicalPgm;
+	public class ArmstrongNo {
+		  
+			  public static void main(String[] args)  {  
+			    int c=0,a,temp;  
+			    int n=153;//It is the number to check armstrong  
+			    temp=n;  
+			    while(n>0)  
+			    {  
+			    a=n%10;  
+			    n=n/10;  
+			    c=c+(a*a*a);  
+			    }  
+			    if(temp==c)  
+			    System.out.println("armstrong number");   
+			    else  
+			        System.out.println("Not armstrong number");   
+			   }  
+			}
+	
+package LogicalPgm;
+  public class DuplicateStings {
+  public static void main(String argu[]) {
+  String str = "w3schoolsxcxc";
+  int cnt = 0;
+   char[] inp = str.toCharArray();
+		  System.out.println("Duplicate Characters are:");
+		  for (int i = 0; i < str.length(); i++) {
+		   for (int j = i + 1; j < str.length(); j++) {
+		    if (inp[i] == inp[j]) {
+		     System.out.println(inp[j]);
+		     cnt++;
+		     break;
+		    }
+		   }
+		  }
+		 }
+		}
+
+
+
+
+package LogicalPgm;
+import java.util.Scanner;
+public class EvenOddNo {
+public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+System.out.println("Ener the no");
+int a=scanner.nextInt();
+	if( a % 2 == 0)
+	{
+System.out.println("no is even");
+	}
+	else
+	{
+		System.out.println("no is odd");
+    }
+		}
+}
+
+
+
+package LogicalPgm;
+
+public class FactorialNo {
+	
+		 public static void main(String[] args) {
+		        //number
+		        int n = 5;
+		        
+		        //store factorial in this
+		        int factorial = 1;
+		        
+		        //compute factorial
+		        int i=1;
+		        while(i<=n) {
+		            factorial *= i; //factorial = factorial * i
+		            i++;
+		        }
+		        
+		        System.out.print(n+"! = "+factorial);
+		    }
+		}
+
+
+package LogicalPgm;
+
+public class FibbononciSeries {
+	 
+		public static void main(String[] args) 
+		{
+			// Set it to the number of elements you want in the Fibonacci Series
+			 int maxNumber = 10; 
+			 int previousNumber = 0;
+			 int nextNumber = 1;
+			 
+		        System.out.print("Fibonacci Series of "+maxNumber+" numbers:");
+	 
+		        for (int i = 1; i <= maxNumber; ++i)
+		        {
+		            System.out.print(previousNumber+" ");
+		            /* On each iteration, we are assigning second number
+		             * to the first number and assigning the sum of last two
+		             * numbers to the second number
+		             */
+	 
+		            int sum = previousNumber + nextNumber;
+		            previousNumber = nextNumber;
+		            nextNumber = sum;
+		        }
+		}
+	}
+
+
+
+package LogicalPgm;
+
+
+	import java.util.Scanner;
+
+	public class LeapYear {
+		private static Scanner sc;
+
+		public static void main(String[] args) {
+			int year;
+			sc = new Scanner(System.in);
+			
+			System.out.println("\n Please Enter any year you wish: ");
+			year = sc.nextInt();
+			
+			if (( year%400 == 0)|| (( year%4 == 0 ) &&( year%100 != 0))) {
+				System.out.format("\n %d is a Leap Year. \n", year);
+			}
+			else {
+				System.out.format("\n %d is NOT a Leap Year. \n", year);
+			}
+		}
+	}
+
+
+
+package LogicalPgm;
+
+
+/*	To find largest, smallest, second largest, second smallest in an array, the code is as follows -
+*/
+
+	import java.util.*;
+	public class Numbers {
+	   public static void main(String []args){
+	      int arr[] = {55, 10, 8, 90, 43, 87, 95, 25, 50, 12};
+	      System.out.println("Array = "+Arrays.toString(arr));
+	      Arrays.sort(arr);
+	      System.out.println("Sorted Array = "+Arrays.toString(arr));
+	      System.out.println("Smallest element = "+arr[0]);
+	      System.out.println("2nd Smallest element = "+arr[0]);
+	      System.out.println("Largest element = "+arr[9]);
+	      System.out.println("2nd Largest element = "+arr[8]);
+	   }
+	}
+
+
+package LogicalPgm;
+
+public class PalindromeNo {
+	 
+	    public static void main(String[] args) {
+	        
+	        int n = 1236321;
+	        
+	        //reverse the string
+	        int rev = Integer.parseInt((new StringBuilder(n+"")).reverse().toString());
+	        
+	        //check if n is palindrome
+	        if(n==rev) {
+	            System.out.println(n+" is Palindrome.");
+	        } else {
+	            System.out.println(n+" is not Palindrome.");
+	        }
+	    }
+	}
+
+
+
+package LogicalPgm;
+
+	import java.util.Scanner;
+	 
+	class PalindromeString
+	{
+	   @SuppressWarnings("resource")
+	public static void main(String args[])
+	   {
+	      String str, rev = "";
+	      Scanner sc = new Scanner(System.in);
+	 
+	      System.out.println("Enter a string:");
+	      str = sc.nextLine();
+	 
+	      int length = str.length();
+	 
+	      for ( int i = length - 1; i >= 0; i-- )
+	         rev = rev + str.charAt(i);
+	 
+	      if (str.equals(rev))
+	         System.out.println(str+" is a palindrome");
+	      else
+	         System.out.println(str+" is not a palindrome");
+	 
+	   }
+	}
+
+
+package LogicalPgm;
+
+import java.util.Scanner;
+
+	public class PrimeNo
+	{
+	    public static void main(String args[])
+	    {
+	        int num, i, count=0;
+	        Scanner scan = new Scanner(System.in);
+			
+	        System.out.print("Enter a Number : ");
+	        num = scan.nextInt();
+			
+	        for(i=2; i<num; i++)
+	        {
+	            if(num%i == 0)
+	            {
+	                count++;
+	                break;
+	            }
+	        }
+	        if(count == 0)
+	        {
+	            System.out.print("This is a Prime Number");
+	        }
+	        else
+	        {
+	            System.out.print("This is not a Prime Number");
+	        }
+	    }
+
+
+}
+
+
+
+
+package LogicalPgm;
+import java.util.HashSet;
+ import java.util.Scanner;
+	import java.util.Set;
+
+	public class RemoveDuplicateCharacter {
+	   public static void main(String args[]){
+	      Scanner sc = new Scanner(System.in);
+	      System.out.println("Enter the required string value ::");
+	      String reqString = sc.next();
+	      char[] myArray = reqString.toCharArray();
+	      System.out.println("indices of the duplicate characters in the given string :: ");
+	      Set set = new HashSet();
+
+	      for(int i=0; i<myArray.length; i++){
+	         if(!set.add(myArray[i])){
+	            System.out.println("Index :: "+i+" character :: "+myArray[i]);
+	         }
+	      }
+	   }
+	}
+
+
+
+
+package LogicalPgm;
+import java.util.Arrays;
+public class SecondLargestNo {
+	public static int getSecondLargest(int[] a, int total){  
+	Arrays.sort(a);  
+	return a[total-2];  
+	}  
+	public static void main(String args[]){  
+	int a[]={1,2,5,6,3,2};  
+	int b[]={44,66,99,77,33,22,55};  
+	System.out.println("Second Largest: "+getSecondLargest(a,6));  
+	System.out.println("Second Largest: "+getSecondLargest(b,7));  
+	}}  
+
+
+package LogicalPgm;
+	public class SwapNo { 
+	    public static void main(String[] args) {
+	        //two numbers
+	        int num1 = 12;
+	        int num2 = 87;
+	        
+	        //temporary variable
+	        int temp;
+	        
+	        //swap two numbers
+	        temp = num1;
+	        num1 = num2;
+	        num2 = temp;
+	        
+	        //print the numbers
+	        System.out.println("num1 : "+num1);
+	        System.out.println("num2 : "+num2);
+	    }
+	}
+	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
