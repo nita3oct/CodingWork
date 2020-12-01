@@ -1,0 +1,656 @@
+Class Programme
+package Basic.Java.Concepts;
+		public class ClassProgramme {
+		 private String name;
+		  /*
+		  Syntax of defining methods of the java class is,
+		  <modifier> <return-type> methodName(<optional-parameter-list>) <exception-list>{
+		                    ...
+		  }
+		  */
+		  public void setName(String n){
+		    //set passed parameter as name
+		    name = n;
+		  }
+		  public String getName(){
+		    //return the set name
+		    return name;
+		  }
+		  //main method will be called first when program is executed
+		  public static void main(String args[]){
+		    /*
+		    Syntax of java object creation is,
+		    <class-name> object-name = new <class-constructor>;
+		    */
+			  ClassProgramme classProgramme =  new ClassProgramme();
+		    //set name member of this object
+			  classProgramme.setName("Visitor");
+		    // print the name
+		    System.out.println("Hello " + classProgramme.getName());       
+		  }
+		}
+    
+    
+    
+Object:
+
+	
+	package Basic.Java.Concepts;
+
+public class ObjectExample {
+	
+	   public ObjectExample(String name) {
+	      // This constructor has one parameter, name.
+	      System.out.println("Passed Name is :" + name );
+	   }
+	   public static void main(String []args) {
+	      // Following statement would create an object myPuppy
+		   ObjectExample objectExample = new ObjectExample( "tommy" );
+	   }
+	}
+
+
+
+
+	Association Programme:
+  package Basic.Java.Concepts;
+
+	// Java program to illustrate the  
+	// concept of Association 
+	  
+	// class bank 
+	class Bank  
+	{ 
+	    private String name; 
+	      
+	    // bank name 
+	    Bank(String name) 
+	    { 
+	        this.name = name; 
+	    } 
+	      
+	    public String getBankName() 
+	    { 
+	        return this.name; 
+	    } 
+	}  
+	  
+	// employee class  
+	class Employee 
+	{ 
+	    private String name; 
+	      
+	    // employee name  
+	    Employee(String name)  
+	    { 
+	        this.name = name; 
+	    } 
+	      
+	    public String getEmployeeName() 
+	    { 
+	        return this.name; 
+	    }  
+	} 
+	  
+	// Association between both the  
+	// classes in main method 
+	class AssociationPgm  
+	{ 
+	    public static void main (String[] args)  
+	    { 
+	        Bank bank = new Bank("Axis"); 
+	        Employee emp = new Employee("Neha"); 
+	          
+	        System.out.println(emp.getEmployeeName() +  
+	               " is employee of " + bank.getBankName()); 
+	    } 
+	} 
+  
+  
+  Encapsulation1 Programme
+  package Basic.Java.Concepts;
+
+public class EncapsulationPgm {
+	   
+	    private String empName;
+	    
+	    //Getter and Setter methods
+	    
+	    public String getEmpName(){
+	        return empName;
+	    }
+
+	   	    public void setEmpName(String newValue){
+	        empName = newValue;
+	    }
+	    
+	    }
+	
+	Encapsulation2 Programme
+  package Basic.Java.Concepts;
+
+public class Encap2 {
+	
+	    public static void main(String args[]){
+
+	    	EncapsulationPgm obj = new EncapsulationPgm();
+	         obj.setEmpName("Mario");
+	         System.out.println("Employee Name: " + obj.getEmpName());
+	         
+	    } 
+	}
+  
+  
+  
+  Polymorphism Programme:
+
+package Basic.Java.Concepts;
+
+	class Polygon {
+
+		  // method to render a shape
+		  public void render() {
+		    System.out.println("Rendering Polygon...");
+		  }
+		}
+
+		class Square extends Polygon {
+
+		  // renders Square
+		  public void render() {
+		    System.out.println("Rendering Square...");
+		  }
+		}
+
+		class Circle extends Polygon {
+
+		  // renders circle
+		  public void render() {
+		    System.out.println("Rendering Circle...");
+		  }
+		}
+
+		class PolymorPhismPgm {
+		  public static void main(String[] args) {
+		    
+		    // create an object of Square
+		    Square s1 = new Square();
+		    s1.render();
+
+		    // create an object of Circle
+		    Circle c1 = new Circle();
+		    c1.render();
+		  }
+		}
+
+Inheritance Programme
+
+
+package Basic.Java.Concepts;
+
+
+	class Animal {
+
+		  // field and method of the parent class
+		  String name;
+		  public void eat() {
+		    System.out.println("I can eat");
+		  }
+		}
+
+		// inherit from Animal
+		class Dog extends Animal {
+
+		  // new method in subclass
+		  public void display() {
+		    System.out.println("My name is " + name);
+		  }
+		}
+
+		class InheritancePgm {
+		  public static void main(String[] args) {
+
+		    // create an object of the subclass
+		    Dog labrador = new Dog();
+
+		    // access field of superclass
+		    labrador.name = "Rohu";
+		    labrador.display();
+
+		    // call method of superclass
+		    // using object of subclass
+		    labrador.eat();
+
+		  }
+		}
+
+Parameterized Constructor
+
+package Basic.Java.Concepts;
+
+
+	
+
+	public class Parameterized {
+		
+			  String languages;
+
+			  // constructor accepting single value
+			  Parameterized(String lang) {
+			    languages = lang;
+			    System.out.println(languages + " Programming Language");
+			  }
+
+			  public static void main(String[] args) {
+
+			    // call constructor by passing a single value
+				  Parameterized obj1 = new Parameterized("Java");
+				  Parameterized obj2 = new Parameterized("Python");
+				  Parameterized obj3 = new Parameterized("C");
+			  }
+			}
+
+
+
+Non Parameterized Constructor
+
+package Basic.Java.Concepts;
+
+public class NonParameter {
+	
+					  int a;
+			  boolean b;
+
+			  public static void main(String[] args) {
+
+			    // A default constructor is called
+				  NonParameter obj = new NonParameter();
+
+			    System.out.println("Default Value:");
+			    System.out.println("a = " + obj.a);
+			    System.out.println("b = " + obj.b);
+			  }
+			}
+
+
+Constructor overloading Programme
+package Basic.Java.Concepts;
+
+	public class ConstructorOverloading {
+		
+			  String language;
+
+			  // constructor with no parameter
+			  ConstructorOverloading() {
+			    this.language = "Java";
+			  }
+
+			  // constructor with a single parameter
+			  ConstructorOverloading(String language) {
+			    this.language = language;
+			  }
+
+			  public void getName() {
+			    System.out.println("Programming Langauage: " + this.language);
+			  }
+
+			  public static void main(String[] args) {
+
+			    // call constructor with no parameter
+				  ConstructorOverloading obj1 = new ConstructorOverloading();
+
+			    // call constructor with a single parameter
+				  ConstructorOverloading obj2 = new ConstructorOverloading("Python");
+
+			    obj1.getName();
+			    obj2.getName();
+			  }
+			}
+
+Method Overriding
+package Basic.Java.Concepts;
+
+	class Animal2 {
+
+		  // method in the superclass
+		  public void eat() {
+		    System.out.println("I can eat");
+		  }
+		}
+
+		// Dog inherits Animal
+		class Dog1 extends Animal2 {
+
+		  // overriding the eat() method
+		  @Override
+		  public void eat() {
+		    System.out.println("I eat dog food");
+		  }
+
+		  // new method in subclass
+		  public void bark() {
+		    System.out.println("I can bark");
+		  }
+		}
+
+		class Overriding{
+		  public static void main(String[] args) 
+		  {
+
+		    // create an object of the subclass
+		    Dog1 labrador = new Dog1();
+
+		    // call the eat() method
+		    labrador.eat();
+		    labrador.bark();
+		  }
+		}
+
+
+
+
+  
+Abstract Class:
+package Basic.Java.Concepts;
+
+		abstract class Animals {
+		  // Abstract method (does not have a body)
+		  public abstract void animalSound();
+		  // Regular method
+		  public void sleep() {
+		    System.out.println("Zzz");
+		  }
+		}
+
+		// Subclass (inherit from Animal)
+		class Pig extends Animals {
+		  public void animalSound() {
+		    // The body of animalSound() is provided here
+		    System.out.println("The pig says: wee wee");
+		  }
+		}
+
+		class AbstractClass {
+		  public static void main(String[] args) {
+		    Pig myPig = new Pig(); // Create a Pig object
+		    myPig.animalSound();
+		    myPig.sleep();
+		  }
+		}
+	
+
+	Interface Programme
+  
+  package Basic.Java.Concepts;
+
+
+
+	class Animal2 {
+
+		  // method in the superclass
+		  public void eat() {
+		    System.out.println("I can eat");
+		  }
+		}
+
+		// Dog inherits Animal
+		class Dog1 extends Animal2 {
+
+		  // overriding the eat() method
+		  @Override
+		  public void eat() {
+		    System.out.println("I eat dog food");
+		  }
+
+		  // new method in subclass
+		  public void bark() {
+		    System.out.println("I can bark");
+		  }
+		}
+
+		class Overriding{
+		  public static void main(String[] args) 
+		  {
+
+		    // create an object of the subclass
+		    Dog1 labrador = new Dog1();
+
+		    // call the eat() method
+		    labrador.eat();
+		    labrador.bark();
+		  }
+		}
+
+
+Super Keyword 
+package Basic.Java.Concepts;
+
+	class Animal3 {
+
+		  // method in the superclass
+		  public void eat() {
+		    System.out.println("I can eat");
+		  }
+		}
+
+		// Dog inherits Animal
+		class Dog4 extends Animal3 {
+
+		  // overriding the eat() method
+		  @Override
+		  public void eat() {
+
+		    // call method of superclass
+		    super.eat();
+		    System.out.println("I eat dog food");
+		  }
+
+		  // new method in subclass
+		  public void bark() {
+		    System.out.println("I can bark");
+		  }
+		}
+
+		class Super {
+		  public static void main(String[] args) {
+
+		    // create an object of the subclass
+		    Dog4 labrador = new Dog4();
+
+		    // call the eat() method
+		    labrador.eat();
+		    labrador.bark();
+		  }
+		}
+
+
+This Keyword
+
+package Basic.Java.Concepts;
+
+	public class This {
+		 
+		    int instVar;
+
+		    This(int instVar){
+		        this.instVar = instVar;
+		        System.out.println("this reference = " + this);
+		    }
+
+		    public static void main(String[] args) {
+		        This this1 = new This(8);
+		        String obj = "Abc";
+				System.out.println("object reference = " + obj);
+		    }
+		}
+
+
+Exception:
+package Basic.Java.Concepts;
+
+public class Exception {
+	
+	    public static void main (String[] args) { 
+	          
+	        // array of size 4. 
+	        int[] arr = new int[4]; 
+	       
+	        // this statement causes an exception 
+	        int i = arr[4]; 
+	          
+	        // the following statement will never execute 
+	        System.out.println("Hi, I want to execute"); 
+	    } 
+	} 
+
+
+
+TryWithFile
+package Basic.Java.Concepts;
+import java.io.File;
+	import java.io.FileReader;
+	import java.io.IOException;
+
+	public class TryWithFile {
+		
+
+			   public static void main(String args[]) {
+			      FileReader fr = null;		
+			      try {
+			         File file = new File("file.txt");
+			         fr = new FileReader(file); char [] a = new char[50];
+			         fr.read(a);   // reads the content to the array
+			         for(char c : a)
+			         System.out.print(c);   // prints the characters one by one
+			      } catch (IOException e) {
+			         e.printStackTrace();
+			      }finally {
+			         try {
+			            fr.close();
+			         } catch (IOException ex) {		
+			            ex.printStackTrace();
+			         }
+			      }
+			   }
+			}
+
+
+
+
+Collection
+
+package Basic.Java.Concepts;
+
+
+	import java.util.ArrayList;
+
+	public class Collection {
+
+
+		  public static void main(String[] args) {
+		    //Create an Integer ArrayList
+		    ArrayList<Integer> numbers = new ArrayList<Integer>();
+		    numbers.add(4);
+		    numbers.add(8);
+		    numbers.add(2);
+		    
+		    System.out.println("List elements: ");
+		    System.out.println(numbers);
+		    
+		    //Modify element
+		    numbers.set(1, 6);
+		    
+		    System.out.println("After modifying element at index 1:");
+		    System.out.println(numbers);
+		    
+		    //Remove an element
+		    numbers.remove(2);
+		    
+		    System.out.println("After removing element at index 2:");
+		    System.out.println(numbers);
+		  }
+		}
+
+
+Collection1
+
+package Basic.Java.Concepts;
+
+	
+
+	import java.util.Deque;
+	import java.util.LinkedList;
+	public class Collection1 {
+	  public static void main(String[] args) {
+	    LinkedList<String> cities = new LinkedList<String>();
+	    
+	    cities.add("Chennai");
+	    cities.add("Bangalore");
+	    
+	    //Inserts element at the beginning
+	    cities.push("Kolkata");
+	    
+	    System.out.println(cities);
+	    
+	    //Retrieves first element
+	    System.out.println("Output of element() method: " + cities.element());
+	    
+	    System.out.println("Out of get method at specified index 2: " + cities.get(2));
+	    
+	    //Print and delete the first element
+	    System.out.println("Output of pop() method: " + cities.pop());
+	    System.out.println(cities);
+	    
+	    //Check if list is empty
+	    System.out.println("Is LinkedList empty: " + cities.isEmpty());
+	    
+	    //Sets new value at index 1
+	    cities.set(1, "Goa");
+	    System.out.println("List elements after using set() method: " + cities);
+	    
+	    //List size
+	    System.out.println("Size of the LinkedList: " + cities.size());
+	  }
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
